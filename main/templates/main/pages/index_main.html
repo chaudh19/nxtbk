@@ -1,0 +1,196 @@
+	<script type="text/javascript">
+	  $(document).ready(function() {
+
+	  	// ************************** //
+  		// scrolltrigger timelines
+  		// ************************** //
+
+	  	function makeTimeline(name) {
+		    var obj = gsap.timeline({
+		      scrollTrigger: {
+		        trigger: name,
+		        start: "center center", //start at top, scroller-start at center
+		        end: "center center",
+		        toggleActions: "play none reverse none",
+		        markers: true
+		      }
+		    });
+		    return obj;
+		  }
+
+		  function makeTimelineRepeating(name) {
+		    var obj = gsap.timeline({
+		      repeat: -1,
+		      repeatDelay: 1,
+		      scrollTrigger: {
+		        trigger: name,
+		        start: "top center", //start at top, scroller-start at center
+		        end: "bottom center",
+		        toggleActions: "play reset play reset",
+		        markers: true
+		      }
+		    });
+		    return obj;
+		  }
+      
+
+	    // ************************** //
+	    // first interactive
+	    // ************************** //
+
+	    ScrollTrigger.create({
+	      trigger: "#interactive-a",
+	      start: "top top",
+	      end: () => "+=" + ($('#interactive-a-text').height() - $('#interactive-a').innerHeight()),
+	      pin: true,
+	    });
+
+	    // let a1 = makeTimeline("#a1");
+	    let a2 = makeTimeline("#a2");
+	    let a3 = makeTimeline("#a3");
+	    let a4 = makeTimeline("#a4");
+	    let a5 = makeTimeline("#a5");
+
+	    a2
+	    .to("#interactive-a #rect_2", { opacity: 1},0)
+
+	    a3
+	    .to("#interactive-a #rect_3", { opacity: 1},0)
+
+	    a4
+	    .to("#interactive-a #rect_4", { opacity: 1},0)
+
+	    a5
+	    .to("#interactive-a #rect_5", { opacity: 1},0)
+
+	  });
+
+	</script>
+
+
+    <div id="main">
+      	
+      	<!-- text -->
+		<div class="row text">
+			<div class="col-lg-3 col-md-1"></div>
+			<section class="col-lg-6 col-md-10">
+				<div class="section-header">
+					<p class="breadcrumbs">Chapter 7 › Section 2</p>
+					<h1>Index</h1><button class="teachers-notes" data-target="#teachersNotesModal" data-toggle="modal" type="button">Teacher's Notes</button> <button class="credits" data-target="#creditsModal" data-toggle="modal" type="button">Credits</button>
+				</div>
+				<p>On a small plot of land (less than the size of the average classroom), Gregor Mendel bent down to plant his garden peas. Look across - see hundreds</p>
+				<p>Was a monk, not trained as a scientist, was kicked out of school, living in an abbey in a small town (in what’s now the Czech Republic).</p>
+				<p>Mendel wasn’t just growing peas, he was methodically conducting an experiment. taking notes with a parchment. And what he found would forever change our understanding of genetics / heredity / How information is passed from parents to their offspring.</p>
+			</section>
+			<div class="col-lg-3 col-md-1"></div>
+		</div>
+
+		<!-- text -->
+		<div class="row text">
+			<div class="col-lg-3 col-md-1"></div>
+			<section class="col-lg-6 col-md-10">
+				<p>Before Mendel’s experiment, here’s what people had believed:</p>
+				<p>believed that the process of inheritance involved a blending of parental traits that produced an intermediate physical appearance in offspring</p>
+				<p>Mother had x, father had y, the children would have a blend of x and y</p>
+				<p>No one had ever really figured out how.</p>
+				<p></p>
+			</section>
+			<div class="col-lg-3 col-md-1"></div>
+		</div>
+
+		<!-- interactive -->
+		<div class="row interactive justify-content-end" style="background:#ffffff">
+			<div class="col-lg-7 col-sm-12" id="interactive-a" style=" position: absolute; left: 0; height:100vh; text-align: center; z-index:1; border: 1px dashed #D8D8D8;">
+				<div class="svg-container" style="height:100%;">
+					<svg viewbox="0 0 827 900" xmlns="http://www.w3.org/2000/svg">
+						<rect id="rect_1" x="76" y="392" width="116" height="116" fill="#efefef" style="opacity: 1"/>
+						<rect id="rect_2" x="215" y="392" width="117" height="116" fill="#efefef" style="opacity: 0"/>
+						<rect id="rect_3" x="355" y="392" width="118" height="116" fill="#efefef" style="opacity: 0"/>
+						<rect id="rect_4" x="496" y="392" width="116" height="116" fill="#efefef" style="opacity: 0"/>
+						<rect id="rect_5" x="635" y="392" width="116" height="116" fill="#efefef" style="opacity: 0"/>
+					</svg>
+				</div>
+			</div>
+			<div class="col-md-5 col-sm-12 text-column" id="interactive-a-text">
+				<div id="a1">
+					<div class="inner">
+						<p>Mendel confirmed that, other than flower color, the pea plants were physically identical. This was an important check to make sure that the two varieties of pea plants only differed with respect to one trait, flower color.--&gt; Validation<br>
+						<span>$$F_{net} = F_{tension} + F_{weight}$$</span></p>
+					</div>
+				</div>
+				<div id="a2">
+					<div class="inner"> <p>Once these validations were complete, Mendel applied the pollen from a plant with violet flowers to the stigma of a plant with white flowers. After gathering and sowing the seeds that resulted from this cross, Mendel found that 100 percent of the F1 hybrid generation had violet flowers. </p> </div>
+			  	</div>
+			  	<div id="a3">
+					<div class="inner"> <p>Conventional wisdom at that time would have predicted the hybrid flowers to be pale violet or for hybrid plants to have equal numbers of white and violet flowers. In other words, the contrasting parental traits were expected to blend in the offspring. Instead, Mendel’s results demonstrated that the white flower trait had completely disappeared in the F1 generation.</p> </div>
+			  	</div>
+			  	<div id="a4">
+					<div class="inner"> <p>Importantly, Mendel did not stop his experimentation there. He allowed the F1 plants to self-fertilize </p> </div>
+			  	</div>
+			  	<div id="a5">
+					<div class="inner"> <p>Importantly, Mendel did not stop his experimentation there. He allowed the F1 plants to self-fertilize </p> </div>
+			  	</div>
+			  	<div id="a6">
+			  	</div>
+			</div>
+		</div>
+
+		<!-- text -->
+		<div class="row text">
+			<div class="col-lg-3 col-md-1"></div>
+			<section class="col-lg-6 col-md-10">
+				<p>For the other six characteristics that Mendel examined, the F1 and F2 generations behaved in the same way that they behaved for flower color. One of the two traits would disappear completely from the F1 generation, only to reappear in the F2 generation at a ratio of roughly 3:1 (Figure 8.4).</p>
+				<p>He made hybrids, crossing tall plants with short plants, white flowers with purple flowers, smooth pods with crumpled pods. Mendel performed hybridizations, which involve mating two true-breeding individuals that have different traits. A trait is defined as a variation in the physical appearance of a heritable characteristic. The characteristics included plant height, seed texture, seed color, flower color, pea-pod size, pea-pod color, and flower position.</p>
+			</section>
+			<div class="col-lg-3 col-md-1"></div>
+		</div>
+
+		<!-- gallery -->
+		<div class="row gallery">
+			<div class="col-lg-2 hidden-md"></div>
+			<div class="col-lg-8 col-md-12">
+				<div class="row">
+					<div class="col-md-2 col-sm-12" style="overflow: hidden; background:#efefef; height:200px; border-radius: 8px">
+						<!-- <img src="imgs/physics_moon.png"/> -->
+					</div>
+					<div class="col-md-2 col-sm-12" style="overflow: hidden; background:#efefef; height:200px; border-radius: 8px">
+						<!-- <img src="imgs/physics_apple.png"/> -->
+					</div>
+					<div class="col-md-2 col-sm-12" style="overflow: hidden; background:#efefef; height:200px; border-radius: 8px">
+						<!-- <img src="imgs/physics_apple.png"/> -->
+					</div>
+					<div class="col-md-2 col-sm-12" style="overflow: hidden; background:#efefef; height:200px; border-radius: 8px">
+						<!-- <img src="imgs/physics_apple.png"/> -->
+					</div>
+					<div class="col-md-2 col-sm-12" style="overflow: hidden; background:#efefef; height:200px; border-radius: 8px">
+						<!-- <img src="imgs/physics_apple.png"/> -->
+					</div>
+					<div class="col-md-2 col-sm-12" style="overflow: hidden; background:#efefef; height:200px; border-radius: 8px">
+						<!-- <img src="imgs/physics_apple.png"/> -->
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-12">
+						<p>Repeated his experiment crossing procedures for the six other pairs of pea character differences. One of the trait would disappear in F1, only to reppear in 25% of the plants in F2</p>
+					</div>
+				</div>
+			</div>
+			<div class="col-lg-2 hidden-md"></div>
+		</div>
+
+		<!-- text -->
+		<div class="row text">
+			<div class="col-lg-3 col-md-1"></div>
+			<section class="col-lg-6 col-md-10">
+				<p>Why peas were the perfect model system</p>
+				<p>Few advantages:</p>
+				<p>Grows to maturity within one season, meaning that several generations could be evaluated over a relatively short time.</p>Large quantities of garden peas could be cultivated simultaneously, allowing Mendel to conclude that his results did not come about simply by chance.
+				<p></p>
+				<p>This species naturally self-fertilizes, meaning that pollen encounters ova within the same flower. The flower petals remain sealed tightly until pollination is completed to prevent the pollination of other plants. The result is highly inbred, or “true-breeding,” pea plants. These are plants that always produce offspring that look like the parent. By experimenting with true-breeding pea plants, Mendel avoided the appearance of unexpected traits in offspring that might occur if the plants were not true breeding.</p>
+				<p>In the pea, which is naturally self-pollinating, this is done by manually transferring pollen from the anther of a mature pea plant of one variety to the stigma of a separate mature pea plant of the second variety.</p>
+			</section>
+			<div class="col-lg-3 col-md-1"></div>
+		</div>
+
+      {% include "../components/bottom-banner.html" with target='page1' %}
+    </div>
